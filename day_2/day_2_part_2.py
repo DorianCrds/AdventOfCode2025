@@ -1,12 +1,19 @@
 from day_2.id_ranges import IdRange
 from day_2.id_strings import IdString
 
-# test_list = ["123123123", "12345", "111", "18181818", "9762548315"]
-test_list = [IdRange("123123122-123123124"), IdRange("12344-12346"), IdRange("110-112"), IdRange("18181817-18181819"), IdRange("9762548314-9762548316")]
+with open("input.txt", "r") as f:
+    content = f.read()
+
+id_ranges_list = []
+
+for raw_id_range in content.split(","):
+    id_ranges_list.append(IdRange(raw_id_range))
+
+# print(id_ranges_list)
 
 invalid_ids_list = []
 
-for id_range in test_list:
+for id_range in id_ranges_list:
     for id_to_check in range(id_range.id_min, int(id_range.id_max) + 1):
         # on décompose l'id en slice de 1 et on vérifie si elles sont toutes égales
         # puis en slice de deux (si int(result) -> True)
