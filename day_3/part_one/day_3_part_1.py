@@ -1,6 +1,6 @@
-from day_3.batteries import Batterie
+from day_3.part_one.batteries import Batterie
 
-with open("input.txt", "r") as f:
+with open("../input.txt", "r") as f:
     content_lines = f.readlines()
 
 batteries_list = []

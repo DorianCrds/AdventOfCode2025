@@ -1,8 +1,4 @@
-# a = ["987654321111111", "811111111111119", "234234234234278", "818181911112111"]
-# c = ["987654321111", "811111111119", "434234234278", "888911112111"]
-e = "8666467466748463644436358474464684357755754832476479449554745556415435374495644765744447544234798447"
-
-class Bat:
+class BatteryBank:
     def __init__(self, line: str):
         self.line_list: list[int] = list(map(int, line.strip()))
 
@@ -46,6 +42,3 @@ class Bat:
                 self.line_list = temporary_slice
 
             value -= 1
-
-e_bat = Bat(e)
-print(e_bat.result)
