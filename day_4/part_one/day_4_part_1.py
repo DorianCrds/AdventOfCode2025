@@ -1,4 +1,4 @@
-with open("./day_4/trials.txt", "r") as f:
+with open("../input.txt", "r") as f:
     raw_content_lines = f.readlines()
 
 # for line in raw_content_lines:
