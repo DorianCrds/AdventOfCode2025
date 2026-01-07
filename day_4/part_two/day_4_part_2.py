@@ -1,4 +1,4 @@
-with open("./day_4/trials.txt", "r") as f:
+with open("../input.txt", "r") as f:
     raw_content_lines = f.readlines()
 
 class Position:
@@ -26,7 +26,7 @@ class Grid:
         self._get_columns_count()
         self._get_grid_list()
 
-        print("Initial grid : ", self.grid_list)
+        # print("Initial grid : ", self.grid_list)
 
         while self.process_requested:
             self._process_grid()
@@ -60,7 +60,6 @@ class Grid:
 
         self._remove_accessible_rolls()
 
-
     def _scan_adjacent_rolls(self):
         for position in self.grid_list:
             if position.is_roll:
@@ -76,7 +75,7 @@ class Grid:
             if self.is_accessible(position) and position.is_roll:
                 position.is_roll = False
         self.process_requested = False
-        print(self.grid_list)
+        # print(self.grid_list)
 
     def _find_out_if_process_requested(self):
         print("Started scan")
@@ -85,7 +84,7 @@ class Grid:
         for position in self.grid_list:
             if self.is_accessible(position) and position.is_roll:
                 self.process_requested = True
-                print("Found a roll to process later")
+                # print("Found a roll to process later")
 
     def count_adjacent_rolls(self, position: Position):
         position.adjacent_spots = []
