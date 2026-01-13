@@ -1,7 +1,7 @@
-with open("trials.txt", "r") as f:
+with open("../input.txt", "r") as f:
     raw_content_lines = f.readlines()
 
-# raw_content_lines = ["3-5", "10-14", "16-20", "12-13", "14-15"]
+# raw_content_lines = ["3-5", "10-14", "16-20", "12-13", "10-14"]
 # raw_content_lines = ["10-14", "16-20", "10-13", "10-15"]
 
 filtered_raw_content_lines = list(dict.fromkeys(raw_content_lines))
@@ -22,10 +22,8 @@ for raw_line in filtered_raw_content_lines:
     if "-" in line.strip():
         raw_id_ranges_list.append(IdRange(line))
 
-# print("Raw : ", raw_id_ranges_list)
 
 sorted_id_ranges_tuple_list = sorted(raw_id_ranges_list, key=lambda this_id_range: (this_id_range.range_min, this_id_range.range_max))
-# print("Sorted : ", sorted_id_ranges_tuple_list)
 
 class NewRange:
     def __init__(self, min_range: int, max_range: int):
@@ -74,7 +72,6 @@ for i in range(len(sorted_id_ranges_tuple_list)):
 result = 0
 for new_range in new_ranges_list:
     result += new_range.counter
-    print("Range min, max : ", new_range.min_range, new_range.max_range)
 
 print("Ranges count : ", len(new_ranges_list))
 print("Result : ", result)
