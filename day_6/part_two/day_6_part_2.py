@@ -1,6 +1,15 @@
+# Ce que je sais :
+# 1. Dans le fichier d'input, les blocs sont identifiables grâce aux index de leur colonnes : (i -> (i + 1) - 2)
+# où i est index opérateur et -2 car il y a une colonne vide de séparation
+# 2. On doit lire de droite à gauche les problèmes
+# en respectant l'index de colonne de chaque digit
+
+# TODO: objet Bloc, qui a index de début, index de fin, col_count, row_count et une liste de str strippée (chaine représentant une colonne)
+# TODO: l'objet Problem ne doit pas bouger théoriquement il fait la même chose
+
 from day_6.part_two.items import Block, Problem
 
-with open("trials.txt", "r") as f:
+with open("../input.txt", "r") as f:
     raw_content_lines = f.readlines()
 
 # print(raw_content_lines)
